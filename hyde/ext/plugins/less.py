@@ -101,11 +101,12 @@ class LessCSSPlugin(CLTransformer):
         ]
 
         less = self.app
-        source = File.make_temp(text)
+        #source = File.make_temp(text)
         target = File.make_temp('')
         args = [u"node", unicode(less)]
         args.extend(self.process_args(supported))
-        args.extend([unicode(source), unicode(target)])
+        # args.extend([unicode(source), unicode(target)])
+        args.extend([unicode(resource), unicode(target)])
         try:
             self.call_app(args)
         except subprocess.CalledProcessError:

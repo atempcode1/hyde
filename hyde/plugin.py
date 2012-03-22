@@ -33,7 +33,7 @@ class PluginProxy(object):
     def __getattr__(self, method_name):
         if hasattr(Plugin, method_name):
             def __call_plugins__(*args):
-                # logger.debug("Calling plugin method [%s]", method_name)
+                logger.debug("Calling plugin method [%s]", method_name)
                 res = None
                 if self.site.plugins:
                     for plugin in self.site.plugins:
