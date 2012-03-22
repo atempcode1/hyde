@@ -132,6 +132,7 @@ class Generator(object):
         if not resource.source_file.is_text:
             return []
         rel_path = resource.relative_path
+        logger.debug(rel_path)
         deps = []
         if hasattr(resource, 'depends'):
             user_deps = resource.depends

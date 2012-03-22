@@ -589,7 +589,7 @@ class HydeLoader(FileSystemLoader):
         # Fixed so that jinja2 loader does not have issues with
         # seprator in windows
         #
-        template = template.replace(os.sep, '/')
+        template = template.replace(os.sep, '//')
         logger.debug("Loading template [%s] and preprocessing" % template)
         (contents,
             filename,

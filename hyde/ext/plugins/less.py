@@ -103,7 +103,7 @@ class LessCSSPlugin(CLTransformer):
         less = self.app
         source = File.make_temp(text)
         target = File.make_temp('')
-        args = [unicode(less)]
+        args = [u"node", unicode(less)]
         args.extend(self.process_args(supported))
         args.extend([unicode(source), unicode(target)])
         try:
