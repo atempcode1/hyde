@@ -101,7 +101,7 @@ class StylusPlugin(CLTransformer):
         if not resource.source_file.kind == 'styl':
             return
         stylus = self.app
-        source = File.make_temp(text.strip())
+        source = File.make_temp(text)
         target = source
         supported = [("compress", "c"), ("include", "I")]
 
