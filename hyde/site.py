@@ -433,13 +433,15 @@ class Site(object):
         Returns the media url by appending the media base url from the config
         with the given path. The return value is url encoded.
         """
-        fpath = Folder(self.config.media_url) \
-                        .child(path) \
+#       fpath = Folder(self.config.media_url) \
+#                       .child(path) \
+#                       .replace(os.sep, '/').encode("utf-8")
+        fpath = (self.config.media_url + path) \
                         .replace(os.sep, '/').encode("utf-8")
         if safe is not None:
             return quote(fpath, safe)
         else:
-            return quote(fpath)
+            return (fpath)
 
     def full_url(self, path, safe=None):
         """
